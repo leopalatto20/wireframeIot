@@ -7,11 +7,8 @@ export default {
   theme: {
     extend: {
         colors: {
-            'azulTec': '#003B5C',
-            'blanco': '#FFFFFF',
-            'grisClaro': '#333333',
-            'negroSuave': '#1C1C1C',
-            'azulClaro': '#c4daf2',
+            'grisClaro': 'rgb(179, 174, 173)',
+            'grisOscuro': 'rgb(84, 83, 83)'
         }
     },
   },

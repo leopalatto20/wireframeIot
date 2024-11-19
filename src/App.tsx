@@ -38,7 +38,7 @@ export default function App () {
     return (
         <div className="h-screen grid grid-rows-[auto,1fr]">
                 <Header />
-            <div className="grid grid-cols-[0.5fr,3fr,0.5fr] h-auto bg-azulClaro">
+            <div className="grid grid-cols-[0.5fr,3fr,0.5fr] h-auto bg-grisClaro">
                 <div className="p-3">
                     <Sidebar images={images} names={names} />
                 </div>
