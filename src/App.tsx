@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import Messages from './components/Messages.tsx';
 import Header from './components/Header.tsx';
 import Directions from './components/Directions.tsx'
@@ -9,8 +11,10 @@ import Crimson from './assets/crimson.jpg';
 import Striker from './assets/striker.jpg';
 import Gipsy from './assets/Gipsy.jpg';
 
-
 export default function App () {
+
+    const [headerText, setHeaderText] = useState("Gipsy Danger")
+
     const messages = [
         "Fortnite",
         "Varbi",
@@ -36,16 +40,16 @@ export default function App () {
         "ADC"
     ]
     return (
-        <div className="h-screen grid grid-rows-[auto,1fr]">
-                <Header />
-            <div className="grid grid-cols-[0.5fr,3fr,0.5fr] h-auto bg-grisClaro">
+        <div className="h-screen grid grid-rows-[auto,1fr] w-full max-w-full">
+                <Header headerText={headerText}/>
+            <div className="grid lg:grid-cols-[0.5fr,3fr,0.5fr] h-auto bg-grisClaro">
                 <div className="p-3">
-                    <Sidebar images={images} names={names} />
+                    <Sidebar images={images} names={names} setHeaderText={setHeaderText}/>
                 </div>
                 <div className="p-3">
                     <SensorGrid Sensores={sensores} />
                 </div>
-                <div className="p-3 flex flex-col gap-3 h-full">
+                <div className="p-3 grid lg:grid-cols-1 grid-cols-2 gap-3 h-full">
                     <Messages messages={messages} />
                     <Directions />
                 </div>
