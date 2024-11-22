@@ -40,7 +40,7 @@ export default function App () {
         "ADC"
     ]
     return (
-        <div className="h-screen grid grid-rows-[auto,1fr] w-full max-w-full">
+        <div className="h-screen grid grid-rows-[auto,1fr]">
                 <Header headerText={headerText}/>
             <div className="grid lg:grid-cols-[0.5fr,3fr,0.5fr] h-auto bg-grisClaro">
                 <div className="p-3">
@@ -51,7 +51,7 @@ export default function App () {
                 </div>
                 <div className="p-3 grid lg:grid-cols-1 grid-cols-2 gap-3 h-full">
                     <Messages messages={messages} />
-                    <Directions />
+                    <Directions topic={"TestIoT/motores"}/>
                 </div>
             </div>
         </div>
