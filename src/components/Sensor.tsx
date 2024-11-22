@@ -119,6 +119,7 @@ export default function SensorGrid ({ Sensores }: Props) {
               fill: false,
               backgroundColor: 'black',
               borderColor: 'black',
+              tension: 0.4,
             },
           ],
         };
