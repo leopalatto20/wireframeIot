@@ -16,7 +16,7 @@ interface Props {
   Sensores: string[];
 }
 
-const SensorGrid = ({ Sensores }: Props) => {
+export default function SensorGrid ({ Sensores }: Props) {
   // Almacenar los datos de cada sensor en un objeto
   const [sensorData, setSensorData] = useState(
     Sensores.reduce((acc, sensor) => {
@@ -31,7 +31,7 @@ const SensorGrid = ({ Sensores }: Props) => {
       clientId: `client_${Math.random().toString(16).slice(2)}`,
     });
 
-    // Suscribirse a cada sensor (cada uno tiene su propio canal MQTT)
+    // Suscribirse al topic de cada sensor, en el codigo de python cada uno manda datos a un topic diferente
     Sensores.forEach((sensor) => {
       const topic = `TestIoT/${sensor}`;
       client.subscribe(topic, (err) => {
@@ -140,5 +140,3 @@ const SensorGrid = ({ Sensores }: Props) => {
     </div>
   );
 };
-
-export default SensorGrid;
