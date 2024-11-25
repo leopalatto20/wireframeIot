@@ -29,15 +29,15 @@ export default function Directions ({ topic } : DirectionsProps) {
     };
 
     const handleDirectionClick = (dir: string) => {
-        sendMessage(dir); // Envía el mensaje al robot
+        sendMessage(dir);
     };
 
     return (
-        <div className="bg-white rounded-lg h-full shadow items-center p-4 shadow-black">
+        <div className="flex flex-col bg-white rounded-lg h-full w-full shadow items-center p-4 shadow-black justify-center">
             <h1 className="text-center text-lg font-semibold">Control de Dirección</h1>
-            <div className="pt-2 grid grid-cols-1 gap-3 h-auto">
+            <div className="pt-2 grid grid-cols-1 gap-3 h-auto w-full">
                 <button
-                    className="bg-black text-white p-2 rounded-lg hover:scale-105 hover:bg-grisOscuro duration-300"
+                    className="bg-black text-white p-2 rounded-lg hover:scale-105 hover:bg-grisOscuro duration-300 h-full"
                     onClick={() => handleDirectionClick("forward")}
                 >
                     Forward

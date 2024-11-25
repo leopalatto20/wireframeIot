@@ -1,16 +1,20 @@
 {
   "name": "wireframe2",
   "private": true,
+  "homepage": "https://leopalatto20.github.io/wireframe2",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "chartjs-2": "^0.0.1-security",
+    "gh-pages": "^6.2.0",
     "mqtt": "^5.10.2",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",

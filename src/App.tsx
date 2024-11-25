@@ -15,12 +15,6 @@ export default function App () {
 
     const [headerText, setHeaderText] = useState("Gipsy Danger")
 
-    const messages = [
-        "Fortnite",
-        "Varbi",
-        "Varbo",
-        "Pollo feliz"
-    ]
     const names = [
         "Cherno Alpha",
         "Crimson Typhoon",
@@ -50,7 +44,7 @@ export default function App () {
                     <SensorGrid Sensores={sensores} />
                 </div>
                 <div className="p-3 grid lg:grid-cols-1 grid-cols-2 gap-3 h-full">
-                    <Messages messages={messages} />
+                    <Messages topic={"TestIoT/mensajes"}/>
                     <Directions topic={"TestIoT/motores"}/>
                 </div>
             </div>
