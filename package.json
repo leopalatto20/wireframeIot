@@ -1,7 +1,6 @@
 {
   "name": "wireframeiot",
   "private": true,
-  "homepage": "https://leopalatto20.github.io/wireframeIot",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
