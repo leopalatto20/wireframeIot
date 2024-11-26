@@ -16,7 +16,7 @@ export default function Messages({ topic }: Props) {
         });
     
         client.on('connect', () => {
-            client.subscribe(topic, { qos: 0 }, (err) => {
+            client.subscribe(topic, (err) => {
                 if (!err) {
                     console.log(`Suscripción exitosa a ${topic}`);
                 } else {
