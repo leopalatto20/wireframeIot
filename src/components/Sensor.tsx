@@ -16,6 +16,31 @@ interface Props {
   Sensores: string[];
 }
 
+/**
+ * @brief Funcion para hacer una POST request al servidor
+ * 
+ * @param string url - URL del servidor 
+ * @param object data - Objecto con los datos a enviar al servidor
+ */
+const makeRequest = async (url: string, data: object) => {
+  try {
+    const response : any = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    console.log('Response: ', result);
+
+  } catch(error) {
+    console.log('Error: ', error);
+  }
+};
+
 export default function SensorGrid ({ Sensores }: Props) {
   // Almacenar los datos de cada sensor en un objeto
   const [sensorData, setSensorData] = useState(
@@ -61,6 +86,9 @@ export default function SensorGrid ({ Sensores }: Props) {
               new Date().toLocaleTimeString(),
             ].slice(-20); // Mantener las últimas 20 etiquetas
           }
+          // Call the makeRequest function
+          makeRequest('http://localhost:3000', newData);
+
           return newData;
         });
       }
