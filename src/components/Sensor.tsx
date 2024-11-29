@@ -28,6 +28,7 @@ const makeRequest = async (url: string, data: object) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Custom-Header': 'BarboPorfavor'
       },
       body: JSON.stringify(data),
     });
